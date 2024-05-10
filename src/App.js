@@ -81,11 +81,11 @@ const App = () => {
 
     const transformations = {
       box_1: {
-        scrollDown: { x: '107%', y: '0%', scale: 1, opacity: 1 },
+        scrollDown: { x: '338%', y: '0%', scale: 1, opacity: 1 },
         scrollUp: { x: '-70%', y: '0%', scale: 1, opacity: 0 }
       },
       box_2: {
-        scrollDown: { x: '-107%', y: '0%', scale: 1 },
+        scrollDown: { x: '-36%', y: '0%', scale: 1 },
         scrollUp: { x: '-70%', y: '3%', scale: 2 }
       },
       box_3: {
@@ -137,10 +137,18 @@ const App = () => {
       </div>
       <div className="parent">
         <div className="container">
-          <div className="box" style={{ transform: `translate(${translate.box_1.x}, ${translate.box_1.y}) scale(${translate.box_1.scale})`, opacity: translate.box_1.opacity }}>1</div>
-          <div className="box" style={{ transform: `translate(${translate.box_2.x}, ${translate.box_2.y}) scale(${translate.box_2.scale})`, opacity: translate.box_2.opacity }}>2</div>
-          <div className="box" style={{ transform: `translate(${translate.box_3.x}, ${translate.box_3.y}) scale(${translate.box_3.scale})`, opacity: translate.box_3.opacity }}>3</div>
-          <div className="box" style={{ transform: `translate(${translate.box_4.x}, ${translate.box_4.y}) scale(${translate.box_4.scale})`, opacity: translate.box_4.opacity }}>4</div>
+          <div className="box" style={{ transform: `translate(${translate.box_1.x}, ${translate.box_1.y}) scale(${translate.box_1.scale})`, opacity: translate.box_1.opacity }}>
+           <img src={require('./images/chrome-gallery-2-2x.webp')} style={{height: '100%'}}/>
+          </div>
+          <div className="box" style={{ transform: `translate(${translate.box_2.x}, ${translate.box_2.y}) scale(${translate.box_2.scale})`, opacity: translate.box_2.opacity }}>
+            <img src={require('./images/chrome-gallery-1-2x.webp')} style={{height: '100%'}}/>
+          </div>
+          <div className="box" style={{ transform: `translate(${translate.box_3.x}, ${translate.box_3.y}) scale(${translate.box_3.scale})`, opacity: translate.box_3.opacity }}>
+            <img src={require('./images/chrome-gallery-3-2x.webp')} style={{height: '100%'}}/>
+          </div>
+          <div className="box" style={{ transform: `translate(${translate.box_4.x}, ${translate.box_4.y}) scale(${translate.box_4.scale})`, opacity: translate.box_4.opacity }}>
+            <img src={require('./images/chrome-gallery-4-2x.webp')} style={{height: '100%'}}/>
+          </div>
           {/* <div className="box" style={{ transform: `translate(${translate.box_5.x}, ${translate.box_5.y}) scale(${translate.box_3.scale})`, opacity: translate.box_3.opacity }}>5</div> */}
         </div>
       </div>
@@ -161,3 +169,79 @@ const App = () => {
 };
 
 export default App;
+
+// import React, { useState, useEffect } from 'react';
+// import './App.css';
+
+// const App = () => {
+//   const [scrollInfo, setScrollInfo] = useState({
+//     scrollPercentage: 0,
+//     scrollDirection: 'none',
+//   });
+
+//   const [overflow, setOverflow] = useState('hidden');
+
+//   useEffect(() => {
+//     let previousScrollPosition = window.scrollY;
+
+//     const calculateScrollPercentage = () => {
+//       const viewportHeight = window.innerHeight;
+//       const totalScrollableHeight = document.documentElement.scrollHeight - viewportHeight;
+//       const currentScrollPosition = window.scrollY;
+//       const scrollPercentage = (currentScrollPosition / totalScrollableHeight) * 100;
+
+//       const scrollDirection = currentScrollPosition > previousScrollPosition ? 'down' : 'up';
+//       previousScrollPosition = currentScrollPosition;
+
+//       return { scrollPercentage, scrollDirection };
+//     };
+
+//     const handleScroll = () => {
+//       setOverflow('visible');
+//       const { scrollPercentage, scrollDirection } = calculateScrollPercentage();
+//       setScrollInfo({ scrollPercentage, scrollDirection });
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+
+//     return () => {
+//       setOverflow('hidden');
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <div style={{ height: '200vh' }}>
+//       <p>Scroll Percentage: {scrollInfo.scrollPercentage.toFixed(2)}%</p>
+//       <p>Scroll Direction: {scrollInfo.scrollDirection}</p>
+//       <div className="container" id="container">
+//         <div className="wrapper" style={{ overflowX: `${overflow}`, transform: `translateX(-${scrollInfo.scrollPercentage}%)` }}>
+//           <div className="rectangle" style={{ transform: `translate(40vw,0)` }}>
+//             <img src={require('./images/chrome-gallery-1-2x.webp')} />
+//           </div>
+//           <div className="rectangle" style={{ transform: `translate(-60vw,0)` }}>
+//             <img src={require('./images/chrome-gallery-4-2x.webp')} />
+//           </div>
+//           <div className="rectangle">
+//             <img src={require('./images/chrome-gallery-3-2x.webp')} />
+//           </div>
+//           <div className="rectangle" style={{ transform: `translate(60vw,0)` }}>
+//             <img src={require('./images/chrome-gallery-2-2x.webp')} />
+//           </div>
+//           <div className="rectangle" style={{ transform: `translate(-40vw,0)` }}>
+//             <img src={require('./images/chrome-gallery-5-2x.webp')} />
+//           </div>
+//         </div>
+//       </div>
+//       <p>hfhffhfhfhf</p>
+//       <p>hfhffhfhfhf</p>
+//       <p>hfhffhfhfhf</p>
+//       <p>hfhffhfhfhf</p>
+//       <p>hfhffhfhfhf</p>
+//       <p>hfhffhfhfhf</p>
+//     </div>
+//   );
+// };
+
+// export default App;
+

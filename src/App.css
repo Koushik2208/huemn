@@ -12,7 +12,6 @@
 }
 
 .container {
-  /* background-color: rgb(255, 196, 196); */
   display: flex;
   gap: 20px;
   align-items: center;
@@ -21,7 +20,7 @@
 }
 
 .box {
-  width: 50%;
+  width: max-content;
   height: 300px;
   background-color: white;
   border-radius: 20px;
@@ -38,9 +37,6 @@
   height: 400px;
   background-color: white;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: all 0.3s linear;
   border: 1px solid #ddd;
   flex-shrink: 0;
@@ -64,4 +60,38 @@ button {
   border-radius: 50%;
   background-color: rgb(237, 236, 236);
   border: none;
+}
+/* .conatiner {
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow-x: inherit;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.rectangle {
+  margin-right: 10px;
+  flex-shrink: 0;
+} */
+
+/* .rectangle:nth-child(1),
+.rectangle:nth-child(3),
+.rectangle:nth-child(5) {
+  width: 60vw;
+}
+
+.rectangle:nth-child(2),
+.rectangle:nth-child(4) {
+  width: 40vw;
+} */
+
+.rectangle>img {
+  width: 100%;
 }
